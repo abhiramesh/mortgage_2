@@ -1,0 +1,11 @@
+<div class="form-part-2">
+	<%= form_for @user, :remote => :true, :method => :put, :html => {:id => "form2" } do |f| %>
+				<%= f.label :home_value %>
+				<%= f.text_field :home_value, placeholder: "Home Value" %>
+			<br>
+				<%= f.label :mortgage_balance %>
+				<%= f.text_field :mortgage_balance, placeholder: "Mortgage Balance" %>
+			<br>
+		<%=f.submit 'Next', :class => "submit" %>
+	<% end %>
+</div>

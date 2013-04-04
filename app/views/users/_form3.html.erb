@@ -1,0 +1,14 @@
+<div class="form-part-3">
+	<%= form_for @user, :method => :put, :html => {:id => "form3" } do |f| %>
+				<%= f.label :name %>
+				<%= f.text_field :name, placeholder: "Name", :style => "width:90px;" %>
+				<br>
+				<%= f.label :email %>
+				<%= f.text_field :email, placeholder: "Email", :style => "width:90px;" %>
+				<br>
+				<%= f.label :phone %>
+				<%= f.text_field :phone, placeholder: "Phone", :style => "width:90px;" %>
+				<br>
+				<%= f.submit 'Submit!', :class => "submit" %>
+	<% end %>
+</div>

@@ -1,0 +1,53 @@
+<div class="container-fluid" align="center">
+	<div class="first-title">
+		Looking for the Best Reverse Mortgage?
+	</div>	
+	<div class="second-title">
+		Sign up now for <span class="emp-text">7 MUST KNOW TIPS</span> about Reverse Mortgages
+	</div>
+	<div class="sign-up-box">
+		<div class="free-guide">
+			Recieve a free guide and consultation today!
+		</div>
+		<div class="form-part-1">
+			<%= form_for @user, remote: true, :html => {:id => "form1"} do |f| %>
+				<%= f.label :zipcode, :class => "zipcode" %>
+					<%= f.text_field :zipcode, placeholder: "Zipcode" %>
+					<%= f.submit "Next", :class => "submit" %>
+			<% end %>
+		</div>
+	</div>
+</div>
+<div class="container-fluid" align="center">
+	<div class="bottom-info">
+		<div class="row-fluid">
+			<div class="span3">
+				<div class="more-info-title">
+					All Credit Types
+				</div>
+				With a reverse mortgage, you can qualify regardless of your credit! Get the free guide to learn more today.
+			</div>
+			<div class="span3">
+				<div class="more-info-title">
+					No Income Required
+				</div>
+				With federally-insured reverse mortgages, there are NO income or medical requirements. So regardless of your current situation, you can qualify.
+			</div>
+			<div class="span3">
+				<div class="more-info-title">
+					Disbursement Options
+				</div>
+				A reverse mortgage can provide extra cash flow to the borrower for as long as they occupy the home. Learn about the six different ways you can receive income.
+			</div>
+			<div class="span3">
+				<div class="more-info-title">
+					Age Eligibility
+				</div>
+				Reverse mortgages are designed for homeowners at least 62 years of age with moderate to significant equity in their homes. Learn more with your free guide.
+			</div>
+		</div>
+	</div>
+</div>
+
+<%= render partial: 'users/form2' %>
+<%= render partial: 'users/form3' %>
