@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
 	end
   end
 
+  def authorize
+  	redirect_to root_path
+  end
+
 end
