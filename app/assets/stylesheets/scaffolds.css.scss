@@ -2,42 +2,73 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 
 
-.first-title{
-  font-family: 'Oswald' sans-serif;
-  font-size: 55px;
-  color: white;
-  line-height: 65px;
-  background: black;
-  padding: 80px 20px 50px 20px;
-  margin-top: -50px;
-  width: 85%;
+.full-width-banner{
+  background: #093E67;
+  width: 100%;
+  padding-bottom: 40px;
+  padding-top: 10px;
+  border-bottom: solid;
+  border-width: 3px;
+  border-color: orange;
 }
 
-.second-title{
-  color: white;
-  text-shadow: 1px 3px 5px black;
-  font-size: 34px;
-  padding-top: 30px;
-  line-height: 35px;
-  -webkit-font-smoothing: antialiased;
+.phone{
+  color: orange;
+  font-size: 22px;
+  margin-left: 5px;
+  padding-top: 15px;
+}
+
+.house{
+  position: absolute;
+  width: 225px;
+  margin-top: -30px;
+}
+
+
+.first-title{
+  font-family: 'Oswald' sans-serif;
+  font-size: 45px;
+  color: #373737;
+  line-height: 50px;
+  background: none;
+  margin-left: -15px;
+  padding-bottom: 55px;
+  padding-top: 20px;
 }
 
 .emp-text{
-  font-weight: bold;
-  color: #438ac0;
+  color: #d06338;
+  font-weight: bolder;
+  -webkit-font-smoothing: antialiased;
+}
+
+.arrow{
+  position: absolute;
+  margin-top: -50px;
+  margin-left: -35px;
+}
+
+.progress{
+  width: 250px;
+  margin-left: 50px;
 }
 
 .sign-up-box{
-  width: 30%;
-  min-width: 250px;
+  width: 350px;
   background-color: #eee;
-  padding: 30px;
-  margin-top: 20px;
-
+  padding: 40px;
+  margin-top: -15px;
+  border-radius: 15px;
+  text-align: center;
+  border: solid;
+  border-width: 1px;
+  border-color: #7a7a7a;
+  box-shadow: 3px 1px 7px #7a7a7a;
 }
 
 .free-guide{
-  color: #373737;
+  color: #d06338;
   font-family: 'Oswald';
   font-size: 30px;
   line-height: 33px;
@@ -66,40 +97,57 @@
 }
 
 .bottom-info{
-  background: black;
-  padding: 20px 20px 50px 20px;
-  margin-top: 10px;
-  width: 90%;
-  min-width: 310px;
-  color: #eee;
+  background: none;
+  color: #373737;
   font-size: 18px;
   line-height: 22px;
+  margin-top: -35px;
+  padding-top: 0px;
 }
 
 .more-info-title{
   padding-bottom: 15px;
   font-family: 'Oswald';
   font-size: 24px;
-  color: orange;
+  color: #093E67;
   padding-top: 20px;
   line-height: 25px;
 }
 
+
+.form-part-1{
+  text-align: left;
+}
+
 .form-part-2{
   display: none;
+  text-align: left;
 }
 
 .form-part-3{
   display: none;
+  text-align: left;
+}
+
+.one-line-form{
+  margin-left: 60px;
+}
+
+.bbb{
+  width: 130px;
+  margin-left: 150px;
+  margin-top: 10px;
+  opacity: 0.8;
 }
 
 
 body {
-  color: #333;
+  color: #373737;
+  padding: 0px 0px 40px 0px;
   font-family: 'Gill Sans' sans-serif;
   font-size: 13px;
   line-height: 18px;
-   background: url('retirement.jpg') no-repeat center center fixed; 
+  background: #D7E5EF;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -140,9 +188,17 @@ div {
 }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
+  padding: 0px;
+  background: none;
   display: table;
+  color: red;
+  font-family: 'Gill Sans';
+}
+
+.message{
+  color: red;
+  margin-top: -5px;
+  padding-bottom: 5px;
 }
 
 #error_explanation {
@@ -176,7 +232,6 @@ input[type='text'], input[type='email']{
   color: black;
   -webkit-font-smoothing: antialiased;
   border-color: #ccc;
-  width: 140px;
 }
 
 label{

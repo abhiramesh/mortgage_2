@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mortgage2</title>
+  <title>Free Reverse Mortgage Guide</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= yield :head %>
 </head>
 <body>
-
+<div class="full-width-banner">
+	<div class="container">
+		<div class="row">
+			<div class="span6">
+				<div class="logo">
+					<img src="/assets/logo.png" width="500px">
+				</div>
+				<div class="phone">
+					Call Us Now: 858-373-8928
+				</div>
+			</div>
+			<div class="span3 offset3">
+				<img src="/assets/house.png" class="house">
+			</div>
+		</div>
+	</div>
+</div>
 <%= yield %>
 <script type="text/javascript">
 	  var _gaq = _gaq || [];
