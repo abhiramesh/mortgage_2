@@ -35,10 +35,11 @@
 					<div class="bar" style="width:30%;"></div>
 				</div>
 				<div class="form-part-1">
-					<%= form_for User.new, :validate => true, remote: true, :html => {:id => "form1"} do |f| %>
+					<%= form_for User.new, remote: true, :html => {:id => "form1"} do |f| %>
 						<%= f.label :zipcode, :class => "zipcode" %>
 							<%= f.text_field :zipcode, placeholder: "Zipcode" %>
-							<%= f.submit "Get Started", :class => "submit" %>
+							<div class="message" id="zip_error"></div>
+							<%= f.submit "Get Started", :class => "submit", :id => "submit-part-1" %>
 					<% end %>
 				</div>
 			</div>
@@ -48,3 +49,22 @@
 </div>
 <%= render partial: 'users/form2' %>
 <%= render partial: 'users/form3' %>
+<script type="text/javascript">
+	$('input#user_zipcode').blur(function(event){
+		var zipRegex = /^\d{5}$/;
+		if (!zipRegex.test($('input#user_zipcode').val())) {
+			event.preventDefault();
+			$('#zip_error').empty().append("Please enter a valid zipcode");
+		}
+		if (zipRegex.test($('input#user_zipcode').val())) {
+			$('#zip_error').empty();
+		}
+	});
+	$('#submit-part-1').click(function(event){
+		var zipRegex = /^\d{5}$/;
+		if (!zipRegex.test($('input#user_zipcode').val())) {
+			event.preventDefault();
+			$('#zip_error').empty().append("Please enter a valid zipcode");
+		}
+	});
+</script>
