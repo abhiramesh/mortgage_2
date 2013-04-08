@@ -33,8 +33,17 @@
   line-height: 50px;
   background: none;
   margin-left: -15px;
-  padding-bottom: 55px;
+  padding-bottom: 8px;
   padding-top: 20px;
+}
+
+.second-title{
+  font-family: 'Oswald' sans-serif;
+  font-size: 22px;
+  color: #093E67;
+  line-height: 30px;
+  margin-left: -15px;
+  padding-bottom: 40px; 
 }
 
 .emp-text{
@@ -140,6 +149,16 @@
   opacity: 0.8;
 }
 
+.back-link{
+  font-size: 14px;
+  text-decoration: underline;
+  margin-top: -15px;
+  cursor: pointer;
+}
+
+.back-link:hover{
+  color: #093E67;
+}
 
 body {
   color: #373737;

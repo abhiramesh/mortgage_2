@@ -1,5 +1,5 @@
-$('.form-part-1').replaceWith($('.form-part-2'));
-$('.form-part-2').css('display','block');
+$('.form-part-1').hide();
+$('.form-part-2').show().insertAfter('div.progress');
 $('#form2').attr('action','/users/' + '<%=current_user.id%>');
 $('.bar').attr('style', 'width:60%;');
 $('form#form2[data-validate]').validate();

@@ -10,6 +10,7 @@
 			<br>
 		<%= f.submit 'Next', :class => "submit", :id => "submit-part-2" %>
 	<% end %>
+	<div class="back-link" id="back-link-1">Back</div>
 </div>
 <script type="text/javascript">
 	$('input#user_mortgage_balance').blur(function(event){
@@ -39,5 +40,9 @@
 			event.preventDefault();
 			$('#home_value_error').empty().append("Enter a correct home value");
 		}
+	});
+	$('#back-link-1').click(function(){
+		$('.form-part-2').hide();
+		$('.form-part-1').show().insertAfter('div.progress');
 	});
 </script>

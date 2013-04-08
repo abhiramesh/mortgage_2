@@ -27,6 +27,7 @@
 	</div>
 				<%= f.submit 'Submit!', :class => "submit", :id => "submit-part-3" %>
 	<% end %>
+	<div class="back-link" id="back-link-2">Back</div>
 </div>
 <script type="text/javascript">
 	$('input#user_name').blur(function(event){
@@ -71,5 +72,9 @@
 			event.preventDefault();
 			$('#phone_error').empty().append("Please enter your phone number");
 		}
+	});
+	$('#back-link-2').click(function(){
+		$('.form-part-3').hide();
+		$('.form-part-2').show().insertAfter('div.progress');
 	});
 </script>
