@@ -1,11 +1,43 @@
 <div class="form-part-2">
 	<%= form_for @user, :remote => :true, :method => :put, :html => {:id => "form2" } do |f| %>
 				<%= f.label :home_value %>
-				<%= f.text_field :home_value, placeholder: "Home Value" %>
+				<%= f.text_field :home_value, :validate => { presence: true }, placeholder: "Home Value" %>
+				<div class="message" id="home_value_error"></div>
 			<br>
 				<%= f.label :mortgage_balance %>
 				<%= f.text_field :mortgage_balance, placeholder: "Mortgage Balance" %>
+				<div class="message" id="mortgage_balance_error"></div>
 			<br>
-		<%=f.submit 'Next', :class => "submit" %>
+		<%= f.submit 'Next', :class => "submit", :id => "submit-part-2" %>
 	<% end %>
 </div>
+<script type="text/javascript">
+	$('input#user_mortgage_balance').blur(function(event){
+		if ($('input#user_mortgage_balance').val().length < 1) {
+			event.preventDefault();
+			$('#mortgage_balance_error').empty().append("Enter a correct mortgage balance");
+		}
+		if ($('input#user_mortgage_balance').val().length > 0) {
+			$('#mortgage_balance_error').empty();
+		}
+	});
+	$('input#user_home_value').blur(function(event){
+		if ($('input#user_home_value').val().length < 1) {
+			event.preventDefault();
+			$('#home_value_error').empty().append("Enter a correct home value");
+		}
+		if ($('input#user_home_value').val().length > 0) {
+			$('#home_value_error').empty();
+		}
+	});
+	$('#submit-part-2').click(function(event){
+		if ($('input#user_mortgage_balance').val().length < 1) {
+			event.preventDefault();
+			$('#mortgage_balance_error').empty().append("Enter a correct mortgage balance");
+		}
+		if ($('input#user_home_value').val().length < 1) {
+			event.preventDefault();
+			$('#home_value_error').empty().append("Enter a correct home value");
+		}
+	});
+</script>
