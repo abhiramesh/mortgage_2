@@ -25,24 +25,27 @@
 				<div class="more-info-title">
 					Age Eligibility
 				</div>
-				Reverse mortgages are designed for homeowners at least 62 years of age with moderate to significant equity in their homes. Learn more with your <span class="emp-text">free guide</span>.
+				Reverse mortgages are designed for homeowners at least <span class="emp-text">62 years of age</span> with moderate to significant equity in their homes. Learn more with your <span class="emp-text">free guide</span>.
 			</div>
 		</div>
 		<div class="span3 offset1">
 			<img src="/assets/arrow.png" class="arrow">
 			<div class="sign-up-box">
-				<div class="free-guide">
-					Receive a free guide and consultation today!
-				</div>
 				<div class="progress">
 					<div class="bar" style="width:30%;"></div>
 				</div>
+				<div class="free-guide">
+					Order your FREE DVD and eBook Now
+				</div>
 				<div class="form-part-1">
 					<%= form_for User.new, remote: true, :html => {:id => "form1"} do |f| %>
-						<%= f.label :zipcode, :class => "zipcode" %>
-							<%= f.text_field :zipcode, placeholder: "Zipcode" %>
-							<div class="message" id="zip_error"></div>
-							<%= f.submit "Get Started", :class => "submit", :id => "submit-part-1" %>
+						<%= f.label :home_value, 'The value of your home is:' %>
+						<%= f.select :home_value, home_value_options, :validate => { presence: true } %>
+						<div class="message" id="home_value_error"></div>
+						<%= f.label :mortgage_balance, 'Your mortgage balance is:' %>
+						<%= f.select :mortgage_balance, mortgage_balance_options, :validate => {presence: true} %>
+						<div class="message" id="mortgage_balance_error"></div>
+							<%= f.submit "Get Started >>", :class => "submit", :id => "submit-part-1" %>
 					<% end %>
 				</div>
 			</div>
@@ -53,21 +56,33 @@
 <%= render partial: 'users/form2' %>
 <%= render partial: 'users/form3' %>
 <script type="text/javascript">
-	$('input#user_zipcode').blur(function(event){
-		var zipRegex = /^\d{5}$/;
-		if (!zipRegex.test($('input#user_zipcode').val())) {
+	$('input#user_mortgage_balance').blur(function(event){
+		if ($('input#user_mortgage_balance').val().length < 1) {
 			event.preventDefault();
-			$('#zip_error').empty().append("Please enter a valid zipcode");
+			$('#mortgage_balance_error').empty().append("Enter a correct mortgage balance");
 		}
-		if (zipRegex.test($('input#user_zipcode').val())) {
-			$('#zip_error').empty();
+		if ($('input#user_mortgage_balance').val().length > 0) {
+			$('#mortgage_balance_error').empty();
+		}
+	});
+	$('input#user_home_value').blur(function(event){
+		if ($('input#user_home_value').val().length < 1) {
+			event.preventDefault();
+			$('#home_value_error').empty().append("Enter a correct home value");
+		}
+		if ($('input#user_home_value').val().length > 0) {
+			$('#home_value_error').empty();
 		}
 	});
 	$('#submit-part-1').click(function(event){
-		var zipRegex = /^\d{5}$/;
-		if (!zipRegex.test($('input#user_zipcode').val())) {
+		if ($('input#user_mortgage_balance').val().length < 1) {
 			event.preventDefault();
-			$('#zip_error').empty().append("Please enter a valid zipcode");
+			$('#mortgage_balance_error').empty().append("Enter a correct mortgage balance");
+		}
+		if ($('input#user_home_value').val().length < 1) {
+			event.preventDefault();
+			$('#home_value_error').empty().append("Enter a correct home value");
 		}
 	});
+	
 </script>

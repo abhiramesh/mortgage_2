@@ -59,13 +59,16 @@
 }
 
 .progress{
-  width: 250px;
-  margin-left: 50px;
+  margin-left: 230px;
+  margin-top: -20px;
+  width: 135px;
+  height: 15px;
 }
+
 
 .sign-up-box{
   width: 350px;
-  background-color: #eee;
+  background-color: #FFFFFF;
   padding: 40px;
   margin-top: -15px;
   border-radius: 15px;
@@ -82,7 +85,13 @@
   font-size: 30px;
   line-height: 33px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
+}
+
+.tips{
+  font-family: 'Gill Sans';
+  color: #313131;
+  font-size: 20px;
 }
 
 .submit{
@@ -92,18 +101,22 @@
   font-size: 18px;
   color: white;
   display: block;
-  background: #24B544;
-  border-radius: 0px;
-  border-color: #24B544;
+  background: orange;
   padding: 10px 35px 10px 35px;
   cursor: pointer;
-  border: none;
   width: 50px;
+  float: right;
+  border-radius: 10px;
+  border: solid;
+  border-color: #777;
+  border-width: 2px;
+  box-shadow: 3px 3px 2px #313131;
 }
 
 .submit:hover{
   color: black;
 }
+
 
 .bottom-info{
   background: none;

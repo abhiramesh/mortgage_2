@@ -6,10 +6,6 @@
 				<%= f.text_field :name, placeholder: "Name", :style => "width:90px;" %>
 		</div>
 		<div class="span1 one-line-form">
-				<%= f.label :email %>
-				<%= f.text_field :email, placeholder: "Email", :style => "width:90px;" %>
-		</div>
-		<div class="span1 one-line-form">
 				<%= f.label :phone %>
 				<%= f.text_field :phone, placeholder: "Phone", :style => "width:90px;" %>
 		</div>
@@ -17,9 +13,6 @@
 	<div class="row">
 		<div class="span2" style="width:102px;">
 			<div class="message" id="name_error"></div>
-		</div>
-		<div class="span2" style="width:102px;">
-			<div class="message" id="email_error"></div>
 		</div>
 		<div class="span2" style="width:102px;">
 			<div class="message" id="phone_error"></div>
@@ -39,16 +32,7 @@
 			$('#name_error').empty();
 		}
 	});
-	$('input#user_email').blur(function(event){
-		var email_format = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
-		if (!email_format.test($('input#user_email').val())) {
-			event.preventDefault();
-			$('#email_error').empty().append("Please enter a valid email");
-		}
-		if (email_format.test($('input#user_email').val())) {
-			$('#email_error').empty();
-		}
-	});
+	
 	$('input#user_phone').blur(function(event){
 		if ($('input#user_phone').val().replace(/\D+/g,'').length != 10) {
 			event.preventDefault();
@@ -59,14 +43,9 @@
 		}
 	});
 	$('#submit-part-3').click(function(event){
-		var email_format = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
 		if ($('input#user_name').val().length < 1) {
 			event.preventDefault();
 			$('#name_error').empty().append("Please enter your name");
-		}
-		if (!email_format.test($('input#user_email').val())) {
-			event.preventDefault();
-			$('#email_error').empty().append("Please enter a valid email");
 		}
 		if ($('input#user_phone').val().replace(/\D+/g,'').length != 10) {
 			event.preventDefault();
@@ -75,6 +54,6 @@
 	});
 	$('#back-link-2').click(function(){
 		$('.form-part-3').hide();
-		$('.form-part-2').show().insertAfter('div.progress');
+		$('.form-part-2').show().insertAfter('div.free-guide');
 	});
 </script>
