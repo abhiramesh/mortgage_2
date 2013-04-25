@@ -43,7 +43,7 @@
 						<%= f.select :home_value, home_value_options, :validate => { presence: true } %>
 						<div class="message" id="home_value_error"></div>
 						<%= f.label :mortgage_balance, 'Your mortgage balance is:' %>
-						<%= f.select :mortgage_balance, mortgage_balance_options, :validate => {presence: true} %>
+						<%= f.select :mortgage_balance, mortgage_balance_options %>
 						<div class="message" id="mortgage_balance_error"></div>
 							<%= f.submit "Get Started >>", :class => "submit", :id => "submit-part-1" %>
 					<% end %>
