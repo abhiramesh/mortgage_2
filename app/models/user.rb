@@ -9,17 +9,17 @@ class User < ActiveRecord::Base
   attr_accessible :zipcode, :home_value, :mortgage_balance, :street, :state, :city, :name, :email, :phone
   attr_accessible :password
   
-  #validates :zipcode, presence: true
-  #validates_format_of :zipcode, :with => /^\d{5}(-\d{4})?$/, :message => "Please enter a correct zipcode"
+  validates :zipcode, presence: true
+  validates_format_of :zipcode, :with => /^\d{5}(-\d{4})?$/, :message => "Please enter a correct zipcode"
 
-  #validates :home_value, presence: true, :numericality => { :only_integer => true }, :on => :update
-  #validates :mortgage_balance, presence: true, :numericality => { :only_integer => true }, :on => :update
+  validates :home_value, presence: true, :numericality => { :only_integer => true }
+  validates :mortgage_balance, presence: true, :numericality => { :only_integer => true }
 
-  #VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  #validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
   
-  #validates :phone, presence: true, :numericality => { :only_integer => true },  :length => { :is => 10 }
+  validates :phone, presence: true, :numericality => { :only_integer => true },  :length => { :is => 10 }
 
-  #validates :name, presence: true  
+  validates :name, presence: true  
  
 end

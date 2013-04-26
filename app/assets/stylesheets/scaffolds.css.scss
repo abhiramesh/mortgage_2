@@ -5,7 +5,7 @@
 .full-width-banner{
   background: #093E67;
   width: 100%;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   padding-top: 10px;
   border-bottom: solid;
   border-width: 3px;
@@ -21,14 +21,14 @@
 
 .house{
   position: absolute;
-  width: 225px;
-  margin-top: -30px;
+  width: 185px;
+  margin-top: -40px;
 }
 
 
 .first-title{
   font-family: 'Oswald' sans-serif;
-  font-size: 45px;
+  font-size: 35px;
   color: #373737;
   line-height: 50px;
   background: none;
@@ -39,7 +39,7 @@
 
 .second-title{
   font-family: 'Oswald' sans-serif;
-  font-size: 22px;
+  font-size: 20px;
   color: #093E67;
   line-height: 30px;
   margin-left: -15px;
@@ -82,10 +82,11 @@
 .free-guide{
   color: #d06338;
   font-family: 'Oswald';
-  font-size: 30px;
+  font-size: 24px;
   line-height: 33px;
   text-align: center;
   margin-bottom: 15px;
+  margin-top: -20px;
 }
 
 .tips{
@@ -273,4 +274,10 @@ label{
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 
+}
+
+.message{
+  font-weight: normal;
+font-size: 12px;
+font-family: Arial;
 }

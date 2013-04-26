@@ -9,7 +9,6 @@ gem 'devise'
 gem 'json'
 gem 'pg', '0.14.1'
 gem 'client_side_validations'
-gem 'devise'
 
 
 # Gems used only for assets and not required
