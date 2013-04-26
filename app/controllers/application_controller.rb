@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
 	end
   end
 
+  def after_sign_in_path_for(resource)
+  	'/logout'
+  end
+
   def authorize
   	if current_user
 	  	unless current_user.email == "vpujji@gmail.com"
