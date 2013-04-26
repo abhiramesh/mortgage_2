@@ -12,8 +12,8 @@ class User < ActiveRecord::Base
   validates :zipcode, presence: true
   validates_format_of :zipcode, :with => /^\d{5}(-\d{4})?$/, :message => "Please enter a correct zipcode"
 
-  validates :home_value, presence: true, :numericality => { :only_integer => true }
-  validates :mortgage_balance, presence: true, :numericality => { :only_integer => true }
+  validates :home_value, presence: true
+  validates :mortgage_balance, presence: true
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
